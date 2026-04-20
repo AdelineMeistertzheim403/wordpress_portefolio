@@ -1,0 +1,44 @@
+services:
+
+  wordpress-db:
+    image: mariadb:10.11
+    container_name: wordpress-db
+    restart: always
+    env_file: .env
+
+    volumes:
+      - wordpress_db:/var/lib/mysql
+
+    networks:
+      - wordpress
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - wordpress-db
+
+    env_file: .env
+
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+      - ./config/wp-config.php:/var/www/html/wp-config.php
+
+    networks:
+      - wordpress
+      - web
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.rule=Host(`portefolio.adelinemeistertzheim.fr`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls.certresolver=letsencrypt"
+
+volumes:
+  wordpress_db:
+
+networks:
+  wordpress:
+  web:
+    external: true     

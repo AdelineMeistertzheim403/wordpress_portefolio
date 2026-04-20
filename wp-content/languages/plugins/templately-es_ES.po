@@ -1,0 +1,468 @@
+# Translation of Plugins - Templately – Elementor &amp; Gutenberg Template Library: 6500+ Free &amp; Pro Ready Templates And Cloud! - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Templately – Elementor &amp; Gutenberg Template Library: 6500+ Free &amp; Pro Ready Templates And Cloud! - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-11-20 06:22:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Templately – Elementor &amp; Gutenberg Template Library: 6500+ Free &amp; Pro Ready Templates And Cloud! - Stable (latest release)\n"
+
+#: includes/Core/Admin.php:448
+msgid "GET PRO Lifetime Access"
+msgstr "OBTENER la versión PRO con acceso de por vida"
+
+#: includes/Core/Admin.php:440
+msgid "Get"
+msgstr "Obtener"
+
+#: includes/Core/Importer/FullSiteImport.php:105
+msgid "Insufficient permissions"
+msgstr "Permisos insuficientes"
+
+#: includes/Core/Importer/FullSiteImport.php:99
+msgid "Invalid nonce"
+msgstr "Nonce no válido"
+
+#: includes/API/MyClouds.php:113
+msgid "Missing required dependency Elementor, please install before trying again."
+msgstr "Falta la dependencia necesaria Elementor, instálala antes de volver a intentarlo."
+
+#: includes/Core/Admin.php:548
+msgid "Templates Library"
+msgstr "Biblioteca de plantillas"
+
+#: includes/Core/Admin.php:547
+msgid "Open settings page"
+msgstr "Abrir la página de ajustes"
+
+#: includes/Utils/Installer.php:132
+msgid "Sorry, you do not have permission to activate a plugin."
+msgstr "Lo siento, no tienes permisos para activar un plugin."
+
+#: includes/Core/Importer/Utils/Utils.php:187
+msgid "Invalid URL"
+msgstr "URL no válida"
+
+#: includes/Builder/Widgets/Featured_Image.php:190
+#: includes/Builder/Widgets/Site_Logo.php:216 assets/js/templately.js:1
+msgid "Default"
+msgstr "Por defecto"
+
+#: includes/Builder/Widgets/Featured_Image.php:162
+#: includes/Builder/Widgets/Site_Logo.php:188
+msgid "Height"
+msgstr "Altura"
+
+#: includes/Builder/Widgets/Featured_Image.php:127
+#: includes/Builder/Widgets/Site_Logo.php:153
+msgid "Max Width"
+msgstr "Anchura máxima"
+
+#: includes/Builder/Widgets/Featured_Image.php:92
+#: includes/Builder/Widgets/Site_Logo.php:118
+msgid "Width"
+msgstr "Anchura"
+
+#: includes/Builder/Widgets/Post_Content.php:40
+msgid "Content"
+msgstr "Contenido"
+
+#: includes/Builder/Widgets/Post_Content.php:48
+#: includes/Builder/Widgets/Post_Title.php:79
+msgid "Text Color"
+msgstr "Color del texto"
+
+#: includes/Builder/Widgets/Post_Title.php:23
+msgid "Post Title"
+msgstr "Título de la entrada"
+
+#: includes/Builder/Widgets/Post_Title.php:49
+msgid "HTML Tag"
+msgstr "Etiqueta HTML"
+
+#: includes/Builder/Widgets/Site_Logo.php:22
+#: includes/Builder/Widgets/Site_Logo.php:41
+#: includes/Builder/Widgets/Site_Logo.php:48
+msgid "Site Logo"
+msgstr "Logotipo del sitio"
+
+#: includes/Builder/Widgets/Site_Logo.php:66
+msgid "Change Site Logo"
+msgstr "Cambiar el logotipo del sitio"
+
+#: includes/Builder/Widgets/Post_Title.php:42
+#: includes/Builder/Widgets/Post_Title.php:71
+msgid "Heading"
+msgstr "Encabezado"
+
+#: includes/Core/Importer/Utils/Utils.php:182
+msgid "URL is empty"
+msgstr "La URL está vacía"
+
+#: includes/Builder/Widgets/Post_Content.php:130
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: includes/Builder/Widgets/Featured_Image.php:22
+#: includes/Builder/Widgets/Featured_Image.php:41
+msgid "Featured Image"
+msgstr "Imagen destacada"
+
+#: includes/Builder/Widgets/Featured_Image.php:59
+#: includes/Builder/Widgets/Site_Logo.php:85
+msgid "Image"
+msgstr "Imagen"
+
+#: includes/Builder/Widgets/Featured_Image.php:67
+#: includes/Builder/Widgets/Site_Logo.php:93
+msgid "Alignment"
+msgstr "Alineación"
+
+#: includes/Utils/Installer.php:196
+msgid "Failed to install theme"
+msgstr "Error al instalar el tema"
+
+#: includes/Utils/Installer.php:122
+msgid "Failed to install plugin"
+msgstr "Fallo al instalar el plugin"
+
+#: includes/Utils/Installer.php:161
+msgid "Theme is already active"
+msgstr "El tema ya está activo"
+
+#: includes/Utils/Installer.php:211 includes/Utils/Installer.php:269
+msgid "Failed to activate theme"
+msgstr "Error al activar el tema"
+
+#: includes/Core/Importer/Utils/Utils.php:19
+msgid "JSON file not exists. "
+msgstr "El archivo JSON no existe. "
+
+#: includes/Core/Importer/Runners/Templates.php:23
+msgid "Importing Templates (i.e: Header, Footer, etc)"
+msgstr "Importación de plantillas (es decir, cabecera, pie de página, etc)"
+
+#: includes/Core/Importer/Runners/Taxonomies.php:21
+msgid "Importing Taxonomies"
+msgstr "Importación de taxonomías"
+
+#: includes/Core/Importer/Runners/Taxonomies.php:13
+msgid "Taxonomies"
+msgstr "Taxonomías"
+
+#: includes/Core/Importer/Runners/GutenbergContent.php:20
+msgid "Block Editor Content"
+msgstr "Contenido del editor de bloques"
+
+#: includes/Core/Importer/Runners/Finalizer.php:39
+#: includes/Core/Importer/Runners/Finalizer.php:43
+msgid "Finalizing Your Imports"
+msgstr "Finalizando tus importaciones"
+
+#: includes/Core/Importer/Runners/ExtraContent.php:30
+msgid "Importing Forms and Others Extra Contents"
+msgstr "Importación de formularios y otros contenidos adicionales"
+
+#: includes/Core/Importer/Runners/AIContent.php:15
+#: includes/Core/Importer/Runners/ExtraContent.php:18
+msgid "Extra Contents"
+msgstr "Contenidos adicionales"
+
+#: includes/Core/Importer/Runners/Customizer.php:29
+#: includes/Core/Importer/Runners/DownloadZip.php:29
+msgid "Updating customizer settings."
+msgstr "Actualización de los ajustes del personalizador."
+
+#: includes/Core/Importer/Runners/Customizer.php:17
+msgid "Customizer"
+msgstr "Personalizador"
+
+#: includes/Core/Importer/Runners/BaseRunner.php:68
+msgid "Platform is not specified. Please try again after specifying the platform."
+msgstr "La plataforma no está especificada. Inténtalo de nuevo después de especificar la plataforma."
+
+#: includes/Core/Importer/Runners/WPContent.php:25
+msgid "WordPress Contents"
+msgstr "Contenidos de WordPress"
+
+#: includes/Core/Importer/FullSiteImport.php:702
+msgid "Permission Passed"
+msgstr "Permiso aprobado"
+
+#: includes/Core/Importer/FullSiteImport.php:693
+msgid "Upload directory is not writable."
+msgstr "No se puede escribir en el directorio de carga."
+
+#: includes/Core/Importer/FullSiteImport.php:608
+#: includes/Core/Importer/FullSiteImport.php:1277 assets/js/templately.js:1
+msgid "Oops!"
+msgstr "¡Vaya!"
+
+#: includes/Core/Admin.php:59
+msgid "All Templates"
+msgstr "Todas las plantillas"
+
+#: includes/Core/Admin.php:56
+msgid "New Template"
+msgstr "Nueva plantilla"
+
+#: includes/Core/Admin.php:54
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: includes/Core/Admin.php:53
+msgctxt "Add New on Toolbar"
+msgid "Book"
+msgstr "Reservar"
+
+#: includes/Core/Admin.php:52
+msgctxt "Admin Menu text"
+msgid "Theme Builder"
+msgstr "Constructor de temas"
+
+#: includes/Core/Admin.php:51
+msgctxt "Post type singular name"
+msgid "Theme Builder"
+msgstr "Constructor de temas"
+
+#: includes/Core/Admin.php:50
+msgctxt "Post type general name"
+msgid "Theme Builders"
+msgstr "Constructores de temas"
+
+#: includes/Builder/Types/Single.php:15
+msgid "Singles"
+msgstr "Individuales"
+
+#: includes/Builder/Types/Search.php:16
+msgid "Search Results"
+msgstr "Resultados de la búsqueda"
+
+#: includes/Builder/Types/Post.php:15
+msgid "Posts"
+msgstr "Entradas"
+
+#: includes/Builder/Types/Post.php:11
+msgid "Post"
+msgstr "Entrada"
+
+#: includes/Core/Admin.php:61
+msgid "Parent Templates:"
+msgstr "Plantillas principales:"
+
+#: includes/Core/Admin.php:60
+msgid "Search Templates"
+msgstr "Buscar plantillas"
+
+#: includes/Core/Admin.php:55 assets/js/templately.js:1
+msgid "Add New Template"
+msgstr "Añadir nueva plantilla"
+
+#: includes/Builder/Types/Search.php:12
+msgid "Search Result"
+msgstr "Resultado de la búsqueda"
+
+#: includes/Builder/Types/ProductSingle.php:15
+msgid "Products Single"
+msgstr "Productos individuales"
+
+#: includes/Builder/Types/ProductSingle.php:11
+msgid "Product Single"
+msgstr "Producto único"
+
+#: includes/Builder/Types/ProductArchive.php:15
+msgid "Product Archives"
+msgstr "Archivos de los productos"
+
+#: includes/Builder/Types/ProductArchive.php:11
+msgid "Product Archive"
+msgstr "Archivo de los productos"
+
+#: includes/Builder/Types/Page.php:14
+#: includes/Builder/Widgets/Post_Content.php:134
+msgid "Page"
+msgstr "Página"
+
+#: includes/Builder/Types/Header.php:16
+msgid "Headers"
+msgstr "Cabeceras"
+
+#: includes/Builder/Types/Footer.php:16
+msgid "Footers"
+msgstr "Pies de página"
+
+#: includes/Builder/Types/Error.php:15
+msgid "404 Error Pages"
+msgstr "404 página de error"
+
+#: includes/Builder/Types/CourseSingle.php:15
+msgid "Courses Single"
+msgstr "Cursos individuales"
+
+#: includes/Builder/Types/CourseSingle.php:11
+msgid "Course Single"
+msgstr "Curso individual"
+
+#: includes/Builder/Types/CourseArchive.php:15
+msgid "Course Archives"
+msgstr "Archivos del curso"
+
+#: includes/Core/Importer/WPImport.php:1340
+msgid "Zero size file downloaded"
+msgstr "Descargado un archivo de tamaño cero"
+
+#: includes/Core/Importer/WPImport.php:1332
+msgid "Remote server did not respond"
+msgstr "El servidor remoto no ha respondido"
+
+#. translators: 1: HTTP error message, 2: HTTP error code.
+#: includes/Core/Importer/WPImport.php:1323
+msgid "Remote server returned the following unexpected result: %1$s (%2$s)"
+msgstr "El servidor remoto ha devuelto el siguiente resultado inesperado: %1$s (%2$s)"
+
+#: includes/Core/Importer/WPImport.php:1387
+msgid "Sorry, this file type is not permitted for security reasons."
+msgstr "Lo siento, este tipo de archivo no está permitido por razones de seguridad."
+
+#: includes/Core/Importer/WPImport.php:1355
+msgid "Remote file is too large, limit is %s"
+msgstr "El archivo remoto es demasiado grande, el límite es de %s"
+
+#: includes/Core/Importer/WPImport.php:1346
+msgid "Downloaded file has incorrect size"
+msgstr "El archivo descargado tiene un tamaño incorrecto"
+
+#: includes/Core/Importer/WPImport.php:1192
+msgid "Invalid file type"
+msgstr "Tipo de archivo no válido"
+
+#: includes/Core/Importer/WPImport.php:1395
+msgid "The uploaded file could not be moved"
+msgstr "El archivo subido no se ha podido mover"
+
+#. translators: 1: WordPress error message, 2: WordPress error code.
+#: includes/Core/Importer/WPImport.php:1315
+msgid "Request failed due to an error: %1$s (%2$s)"
+msgstr "Ha fallado la solicitud debido a un error: %1$s (%2$s)"
+
+#: includes/Core/Importer/WPImport.php:1292
+msgid "Could not create temporary file."
+msgstr "No se ha podido crear el archivo temporal."
+
+#. translators: 1: Term taxonomy, 2: Term name.
+#. translators: 1: Post type singular label, 2: Post title.
+#. translators: 1: Taxonomy name, 2: Term name.
+#: includes/Core/Importer/WPImport.php:536
+#: includes/Core/Importer/WPImport.php:762
+#: includes/Core/Importer/WPImport.php:816
+msgid "Failed to import %1$s %2$s"
+msgstr "Error al importar %1$s %2$s"
+
+#: includes/Core/Importer/WPImport.php:295
+msgid "The file does not exist, please try again."
+msgstr "El archivo no existe. Por favor, inténtalo de nuevo."
+
+#: includes/Core/Importer/FullSiteImport.php:759
+#: includes/Core/Importer/Runners/DownloadZip.php:114
+msgid "Downloading Failed. Please try again"
+msgstr "Error de descarga. Vuelve a intentarlo"
+
+#: includes/Core/Importer/FullSiteImport.php:722
+#: includes/Core/Importer/Runners/DownloadZip.php:78
+msgid "Template pack download failed"
+msgstr "La descarga del paquete de plantillas ha fallado"
+
+#: includes/API/SavedTemplates.php:29
+msgid "Sorry, you do not have permission to delete this template."
+msgstr "Lo siento, no tienes permisos para eliminar esta plantilla."
+
+#: includes/Core/Platform/Elementor.php:84
+msgid "You have to install/activate %s to import %s Template."
+msgstr "Tienes que instalar/activar %s para importar la plantilla %s."
+
+#: includes/Core/Importer/Runners/Templates.php:19 assets/js/templately.js:1
+msgid "Templates"
+msgstr "Plantillas"
+
+#: includes/Core/Admin.php:58 assets/js/templately.js:1
+msgid "View Template"
+msgstr "Ver plantilla"
+
+#: includes/Builder/Source.php:223 assets/js/templately.js:1
+msgid "All"
+msgstr "Todo"
+
+#: includes/Builder/Types/Page.php:18 assets/js/templately.js:1
+msgid "Pages"
+msgstr "Páginas"
+
+#: includes/Core/Admin.php:57 assets/js/templately.js:1
+msgid "Edit Template"
+msgstr "Editar la plantilla"
+
+#. Description of the plugin
+#: templately.php
+msgid "The Best Templates Cloud for Elementor & Gutenberg. Get access to stunning templates, WorkSpace, Cloud Library & many more."
+msgstr "La mejor nube de plantillas para Elementor y Gutenberg. Obtén acceso a impresionantes plantillas, espacio de trabajo, biblioteca en la nube y mucho más."
+
+#: includes/Utils/Installer.php:113
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr "No ha sido posible conectar con el sistema de archivos. Por favor, confirma tus credenciales."
+
+#: includes/API/Dependencies.php:122
+msgid "You have the plugin installed."
+msgstr "Tienes el plugin instalado."
+
+#: includes/API/Items.php:391 includes/Builder/Types/BaseTemplate.php:227
+#: includes/Utils/Base.php:31 includes/Utils/Base.php:42
+#: assets/js/templately.js:1
+msgid "Something went wrong."
+msgstr "Algo ha ido mal."
+
+#: includes/API/Login.php:78 includes/API/SignUp.php:40
+msgid "Make sure you have given a valid email address."
+msgstr "Asegúrate de que has dado una dirección de correo electrónico válida."
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: templately.php includes/Core/Admin.php:522
+#: includes/Core/Platform/Gutenberg.php:83 views/header.php:7
+#: assets/js/elementor.js:1
+msgid "Templately"
+msgstr "Templately"
+
+#. Plugin URI of the plugin
+#: templately.php
+msgid "https://templately.com"
+msgstr "https://templately.com"
+
+#. Author URI of the plugin
+#: templately.php
+msgid "https://templately.com/"
+msgstr "https://templately.com/"
+
+#: includes/Core/Admin.php:523
+msgid "requires"
+msgstr "necesita que"
+
+#: includes/Core/Admin.php:525
+msgid "plugin to be installed and activated. Please install Elementor to continue."
+msgstr "sea instalado y activado. Por favor, instala Elementor para continuar."
+
+#: views/header.php:10
+msgid "Version"
+msgstr "Versión"
+
+#: includes/Core/Platform/Elementor.php:191
+msgid "Successfully Deleted."
+msgstr "Borrado correctamente."
+
+#: includes/API/Dependencies.php:92 includes/Core/Admin.php:524
+#: includes/Core/Importer/Runners/ElementorContent.php:17
+#: assets/js/templately.js:1
+msgid "Elementor"
+msgstr "Elementor"
