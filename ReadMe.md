@@ -8,8 +8,8 @@ Le deploiement pousse uniquement le code et la configuration necessaires au site
 
 - `config/`
 - `docker-compose.yml`
-- `wp-content/themes/`
-- `wp-content/plugins/`
+- `scripts/`
+- `wp-content/themes/adeline-portfolio/`
 - le reste du code versionne utile au site
 
 Le workflow n'ecrase pas :
@@ -17,6 +17,8 @@ Le workflow n'ecrase pas :
 - `wp-content/uploads/`
 - `wp-content/litespeed/`
 - `wp-content/cache/`
+- `wp-content/plugins/`
+- les themes WordPress non custom
 - `.env`
 - les dumps SQL
 
@@ -64,6 +66,13 @@ Chaque push sur `main` declenche :
 3. Verifier que `docker compose -f docker-compose.yml up -d` fonctionne manuellement.
 4. Ajouter les secrets GitHub.
 5. Faire un push sur `main` ou lancer le workflow manuellement.
+
+Si le workflow affiche des erreurs `Permission denied` sur `wp-content/themes`, appliquer une fois sur le serveur :
+
+```bash
+sudo chown -R debian:debian /home/debian/wordpress/wp-content/themes/adeline-portfolio
+sudo chmod -R u+rwX,go+rX /home/debian/wordpress/wp-content/themes/adeline-portfolio
+```
 
 ### Conseils pour developper un theme personnalise
 

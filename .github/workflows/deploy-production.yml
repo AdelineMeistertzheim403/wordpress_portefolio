@@ -47,17 +47,29 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
           SSH_OPTIONS="-i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22}"
+          ssh $SSH_OPTIONS "${SSH_USER}@${SSH_HOST}" "mkdir -p '${DEPLOY_PATH}/config' '${DEPLOY_PATH}/scripts/deploy' '${DEPLOY_PATH}/wp-content/themes/adeline-portfolio'"
+
+          # Sync infra files only (avoid touching runtime-managed wp-content files).
           rsync -az --delete \
+            --omit-dir-times --no-perms --no-owner --no-group \
             --exclude '.git/' \
             --exclude '.github/' \
             --exclude '.env' \
             --exclude 'wordpress-prod-*.sql' \
+            --exclude 'wp-content/**' \
             --exclude 'wp-content/cache/' \
             --exclude 'wp-content/litespeed/' \
             --exclude 'wp-content/uploads/' \
             --exclude 'backups/' \
             -e "ssh ${SSH_OPTIONS}" \
             ./ "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/"
+
+          # Sync only the custom theme for WordPress frontend changes.
+          rsync -az --delete \
+            --omit-dir-times --no-perms --no-owner --no-group \
+            -e "ssh ${SSH_OPTIONS}" \
+            ./wp-content/themes/adeline-portfolio/ \
+            "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/wp-content/themes/adeline-portfolio/"
 
       - name: Run remote deployment
         env:
