@@ -25,9 +25,19 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          printf '%s' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+          printf '\n' >> ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Test SSH connectivity
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          SSH_OPTIONS="-i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22}"
+          ssh $SSH_OPTIONS "${SSH_USER}@${SSH_HOST}" "echo '[deploy] SSH OK'"
 
       - name: Sync project to server
         env:
@@ -36,6 +46,7 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
+          SSH_OPTIONS="-i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22}"
           rsync -az --delete \
             --exclude '.git/' \
             --exclude '.github/' \
@@ -45,7 +56,7 @@ jobs:
             --exclude 'wp-content/litespeed/' \
             --exclude 'wp-content/uploads/' \
             --exclude 'backups/' \
-            -e "ssh -p ${SSH_PORT:-22}" \
+            -e "ssh ${SSH_OPTIONS}" \
             ./ "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/"
 
       - name: Run remote deployment
@@ -56,5 +67,6 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           GIT_SHA: ${{ github.sha }}
         run: |
-          ssh -p "${SSH_PORT:-22}" "${SSH_USER}@${SSH_HOST}" \
+          SSH_OPTIONS="-i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22}"
+          ssh $SSH_OPTIONS "${SSH_USER}@${SSH_HOST}" \
             "cd '${DEPLOY_PATH}' && chmod +x scripts/deploy/remote-deploy.sh && DEPLOY_SHA='${GIT_SHA}' scripts/deploy/remote-deploy.sh"
