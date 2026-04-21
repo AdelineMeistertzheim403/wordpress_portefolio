@@ -50,6 +50,15 @@ Dans le depot GitHub, ajoute ces secrets dans l'environnement `production` ou da
 - `SSH_PRIVATE_KEY` : cle privee de deploiement
 - `DEPLOY_PATH` : chemin absolu du projet sur le serveur, par exemple `/opt/wordpress_portefolio`
 
+### Variable GitHub optionnelle (plugins custom)
+
+Tu peux ajouter la variable de repository suivante pour deployer des plugins precis (sans ouvrir toute la sync de `wp-content/plugins`) :
+
+- `PLUGIN_SYNC_PATHS` : liste separee par des espaces, par exemple
+	`wp-content/plugins/mon-plugin wp-content/plugins/mon-autre-plugin`
+
+Seuls les chemins commencant par `wp-content/plugins/` sont acceptes.
+
 ### Fonctionnement du deploiement
 
 Chaque push sur `main` declenche :
@@ -79,3 +88,14 @@ sudo chmod -R u+rwX,go+rX /home/debian/wordpress/wp-content/themes/adeline-portf
 Pour la suite, le plus propre sera de developper ton theme dans un dossier dedie sous `wp-content/themes/`, par exemple `wp-content/themes/adeline-portfolio/`.
 
 Le workflow de deploiement est deja compatible avec cette approche : des que ton theme est versionne dans le depot, il sera deploye automatiquement sans toucher aux uploads ni a la base.
+
+### Migration controlee de contenu et reglages
+
+Des scripts sont disponibles dans `scripts/deploy/` pour:
+
+- exporter/importer les reglages UI (Customizer + Elementor)
+- exporter/importer un bundle de migration complet (base + uploads)
+
+Guide detaille:
+
+- `docs/deployment-content-migration.md`

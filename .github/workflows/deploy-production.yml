@@ -45,9 +45,10 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           SSH_USER: ${{ secrets.SSH_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          PLUGIN_SYNC_PATHS: ${{ vars.PLUGIN_SYNC_PATHS }}
         run: |
           SSH_OPTIONS="-i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22}"
-          ssh $SSH_OPTIONS "${SSH_USER}@${SSH_HOST}" "mkdir -p '${DEPLOY_PATH}/config' '${DEPLOY_PATH}/scripts/deploy' '${DEPLOY_PATH}/wp-content/themes/adeline-portfolio'"
+          ssh $SSH_OPTIONS "${SSH_USER}@${SSH_HOST}" "mkdir -p '${DEPLOY_PATH}/config' '${DEPLOY_PATH}/scripts/deploy' '${DEPLOY_PATH}/wp-content/themes/adeline-portfolio' '${DEPLOY_PATH}/wp-content/plugins'"
 
           # Sync infra files only (avoid touching runtime-managed wp-content files).
           rsync -az --delete \
@@ -70,6 +71,36 @@ jobs:
             -e "ssh ${SSH_OPTIONS}" \
             ./wp-content/themes/adeline-portfolio/ \
             "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/wp-content/themes/adeline-portfolio/"
+
+          # Optional: sync only selected plugins (space-separated paths in repository variable PLUGIN_SYNC_PATHS).
+          # Example: wp-content/plugins/my-plugin wp-content/plugins/my-second-plugin
+          if [[ -n "${PLUGIN_SYNC_PATHS:-}" ]]; then
+            for rel_path in ${PLUGIN_SYNC_PATHS}; do
+              rel_path="${rel_path%/}"
+
+              if [[ "${rel_path}" != wp-content/plugins/* ]]; then
+                echo "[deploy] Skipping invalid plugin path: ${rel_path}" >&2
+                continue
+              fi
+
+              if [[ ! -d "${rel_path}" ]]; then
+                echo "[deploy] Skipping missing local plugin path: ${rel_path}" >&2
+                continue
+              fi
+
+              ssh $SSH_OPTIONS "${SSH_USER}@${SSH_HOST}" "mkdir -p '${DEPLOY_PATH}/${rel_path}'"
+
+              rsync -az --delete \
+                --omit-dir-times --no-perms --no-owner --no-group \
+                -e "ssh ${SSH_OPTIONS}" \
+                "./${rel_path}/" \
+                "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/${rel_path}/"
+
+              echo "[deploy] Synced plugin path: ${rel_path}"
+            done
+          else
+            echo "[deploy] No plugin path configured in PLUGIN_SYNC_PATHS"
+          fi
 
       - name: Run remote deployment
         env:
