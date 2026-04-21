@@ -1,0 +1,33 @@
+services:
+  wordpress-db:
+    image: mariadb:10.11
+    container_name: wordpress-db-dev
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - wordpress_db_dev:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+      - ./:/seed:ro
+    networks:
+      - wordpress
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress-dev
+    restart: unless-stopped
+    depends_on:
+      - wordpress-db
+    env_file: .env
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+      - ./config/wp-config.php:/var/www/html/wp-config.php
+    ports:
+      - "8080:80"
+    networks:
+      - wordpress
+
+volumes:
+  wordpress_db_dev:
+
+networks:
+  wordpress:
